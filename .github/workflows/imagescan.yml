@@ -2,6 +2,9 @@ name: Image Security Scan
 
 on:
   push:
+    paths-ignore:
+      - "README.md"
+      - "LICENSE"
   workflow_dispatch:
   schedule:
     - cron: "25 4 * * *"
