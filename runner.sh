@@ -26,7 +26,7 @@ ln -sf "/wordpress/wordpress-tests-lib-${WORDPRESS_VERSION}" /tmp/wordpress-test
 
 echo "Waiting for MySQL..."
 while ! nc -z "${MYSQL_HOST}" 3306; do
-	sleep 0.5
+	sleep 1
 done
 
 echo "Running tests..."

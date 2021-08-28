@@ -42,7 +42,7 @@ jobs:
 
       - name: Set up Docker Metadata
         id: meta
-        uses: docker/metadata-action@v3.4.1
+        uses: docker/metadata-action@v3.5.0
         with:
           images: wildwildangel/wp-test-runner
           tags: |
@@ -50,7 +50,7 @@ jobs:
             type=sha
 
       - name: Build and push
-        uses: docker/build-push-action@v2.6.1
+        uses: docker/build-push-action@v2.7.0
         with:
           context: .
           platforms: linux/amd64
