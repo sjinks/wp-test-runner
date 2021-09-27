@@ -31,7 +31,7 @@ RUN \
 	done && \
 	wait
 
-RUN composer global require phpunit/phpunit:^7
+RUN composer global require phpunit/phpunit:^7 yoast/phpunit-polyfills:^1
 WORKDIR /app
 VOLUME ["/app"]
 
