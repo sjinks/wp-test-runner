@@ -32,7 +32,7 @@ done
 
 echo "Running tests..."
 if [ -f /app/phpunit.xml ] || [ -f /app/phpunit.xml.dist ]; then
-	if [ -x /app/vendor/bin/phpunit ]; then
+	if [ -x /app/vendor/bin/phpunit ] && [ -z "${PHPUNIT_VERSION}" ]; then
 		/app/vendor/bin/phpunit "$@"
 	else
 		"phpunit${PHPUNIT_VERSION}" "$@"
