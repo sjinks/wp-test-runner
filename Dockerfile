@@ -18,6 +18,11 @@ RUN \
 	install -d -o user -g user -m 0777 /app /wordpress && \
 	wget -q https://getcomposer.org/installer -O - | php -- --install-dir=/usr/bin/ --filename=composer
 
+RUN \
+	wget -O /usr/local/bin/phpunit7 https://phar.phpunit.de/phpunit-7.phar && chmod +x /usr/local/bin/phpunit7 && \
+	wget -O /usr/local/bin/phpunit8 https://phar.phpunit.de/phpunit-8.phar && chmod +x /usr/local/bin/phpunit8 && \
+	wget -O /usr/local/bin/phpunit9 https://phar.phpunit.de/phpunit-9.phar && chmod +x /usr/local/bin/phpunit9
+
 COPY --from=pli /usr/lib/preloadable_libiconv.so /usr/lib/preloadable_libiconv.so
 COPY install-wp.sh /usr/local/bin/install-wp
 COPY runner.sh /usr/local/bin/runner

@@ -8,6 +8,7 @@ set -e
 : "${MYSQL_DB:="wordpress_test"}"
 : "${MYSQL_HOST:="db"}"
 : "${WORDPRESS_VERSION:="latest"}"
+: "${PHPUNIT_VERSION:=""}"
 
 if [ ! -d "/wordpress/wordpress-${WORDPRESS_VERSION}" ] || [ ! -d "/wordpress/wordpress-tests-lib-${WORDPRESS_VERSION}" ]; then
 	install-wp "${WORDPRESS_VERSION}"
@@ -34,7 +35,7 @@ if [ -f /app/phpunit.xml ] || [ -f /app/phpunit.xml.dist ]; then
 	if [ -x /app/vendor/bin/phpunit ]; then
 		/app/vendor/bin/phpunit "$@"
 	else
-		phpunit "$@"
+		"phpunit${PHPUNIT_VERSION}" "$@"
 	fi
 else
 	echo "Unable to find phpunit.xml or phpunit.xml.dist"
