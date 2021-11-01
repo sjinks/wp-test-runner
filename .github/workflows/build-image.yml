@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the source code
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v2.3.5
 
       - name: Login to DockerHub
         uses: docker/login-action@v1
@@ -34,7 +34,7 @@ jobs:
 
       - name: Set up Docker Metadata
         id: meta
-        uses: docker/metadata-action@v3.5.0
+        uses: docker/metadata-action@v3.6.0
         with:
           images: wildwildangel/wp-test-runner
           tags: |
