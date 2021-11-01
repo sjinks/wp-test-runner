@@ -23,12 +23,12 @@ docker run \
 **Parameters and environment variables:**
   * `NETWORK_NAME` is the name of the network (created with `docker network create`) where MySQL server resides.
   * `WORDPRESS_VERSION` is the version of WordPress to use. If the version specified is not among the preinstalled ones, it will be downloaded and configured. Preinstalled versions:
-    * 5.3.8
-    * 5.4.6
-    * 5.5.5
-    * 5.6.4
-    * 5.7.2
-    * 5.8 (aliased as `latest`)
+    * 5.3.9
+    * 5.4.7
+    * 5.5.6
+    * 5.6.5
+    * 5.7.3
+    * 5.8.1 (aliased as `latest`)
     * nightly
   * `WP_MULTISITE`: 0 if run tests for the "single site" mode, 1 for the WPMU mode
   * `MYSQL_USER`: MySQL user name (defaults to `wordpress`)
