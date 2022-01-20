@@ -9,11 +9,17 @@ on:
   schedule:
     - cron: "25 4 * * *"
 
+permissions:
+  contents: read
+
 jobs:
   scan:
     name: Security Scan
     runs-on: ubuntu-latest
     if: ${{ !contains(github.event.head_commit.message, '[ci skip]') || github.event_name != 'push' }}
+    permissions:
+      contents: read
+      security-events: write
     steps:
       - name: Check out the source code
         uses: actions/checkout@v2.4.0
