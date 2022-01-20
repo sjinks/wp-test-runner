@@ -38,7 +38,7 @@ jobs:
           push: false
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new
-          tags: wp-test-runner:${{ github.sha }}
+          tags: docker.io/wildwildangel/wp-test-runner:${{ github.sha }}
 
       - name: Move cache
         run: |
@@ -65,7 +65,7 @@ jobs:
         uses: aquasecurity/trivy-action@master
         id: scan
         with:
-          image-ref: wp-test-runner:${{ github.sha }}
+          image-ref: docker.io/wildwildangel/wp-test-runner:${{ github.sha }}
           format: ${{ steps.scanparams.outputs.format }}
           template: ${{ steps.scanparams.outputs.template }}
           output: ${{ steps.scanparams.outputs.output }}
