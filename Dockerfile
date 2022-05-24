@@ -1,7 +1,7 @@
-FROM alpine:3.13 AS pli
+FROM alpine:3.16.0 AS pli
 RUN apk -U upgrade && apk add --no-cache gnu-libiconv
 
-FROM alpine:3.15
+FROM alpine:3.16.0
 
 RUN \
 	apk -U upgrade && \
